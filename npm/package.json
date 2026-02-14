@@ -1,9 +1,18 @@
 {
   "name": "@apiverve/passwordgenerator",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Password Generator is a simple tool for generating passwords. It returns the generated password.",
   "main": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "mocha",
     "example": "node examples/basic.js"
@@ -14,14 +23,18 @@
     "directory": "npm"
   },
   "keywords": [
-    "password generator", "password generation", "password generator api", "password generation api", "password generator tool"
+    ""
   ],
-  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "author": {
+    "name": "APIVerve",
+    "email": "hello@apiverve.com",
+    "url": "https://apiverve.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/apiverve/passwordgenerator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/passwordgenerator?utm_source=npm",
+  "homepage": "https://apiverve.com/marketplace/passwordgenerator?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
