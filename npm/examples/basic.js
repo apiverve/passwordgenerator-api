@@ -15,9 +15,9 @@ const api = new passwordgeneratorAPI({
 
 // Example query
 var query = {
-  count: 10,
+  count: 1,
   length: 12,
-  complexity: "strong"
+  complexity: "medium"
 };
 
 // Make the API request using callback
