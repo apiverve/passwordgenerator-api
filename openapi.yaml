@@ -1,49 +1,48 @@
 openapi: 3.0.4
 info:
   title: Password Generator
-  description: Password Generator is a simple tool for generating passwords. It returns the generated password.
+  description: >-
+    Password Generator is a simple tool for generating passwords. It returns the
+    generated password.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/passwordgenerator:
     get:
       summary: Generate Password
-      description: Password Generator is a simple tool for generating passwords. It returns the generated password.
+      description: Generate passwords with a specified length and complexity
       operationId: passwordgenerator
       parameters:
-      - name: count
-        default: '1'
-        in: query
-        schema:
-          type: integer
-        required: true
-        description: The number of passwords to generate
-        example: '10'
-      - name: length
-        default: '12'
-        in: query
-        schema:
-          type: integer
-        required: true
-        description: The length of the password to generate
-        example: '12'
-      - name: complexity
-        default: medium
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The complexity of the password (e.g., simple, medium, strong)
-        example: strong
+        - name: count
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: The number of passwords to generate
+          example: 10
+        - name: length
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: The length of the password to generate
+          example: 12
+        - name: complexity
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The complexity of the password
+          example: strong
       responses:
         '200':
           description: Successful Response
@@ -59,32 +58,80 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  length: '30'
-                  count: 10
-                  complexity: strong
                   passwords:
-                  - nYC+ye^j0?*$[FQh-x2WkBs0)B3Z2A
-                  - KbT'#1$?Z.|y:E*vy3iPndYM78mh.
-                  - ']Pja)F/#a{pc[nS37w_@B*+Tjq3)/]'
-                  - /C7f!3g-}QnJBJAV7hxiLv'UBkc@2=
-                  - .'i2('fD'80]'l/g)BoY[#OW&8
-                  - 1::wMGZ#sUpgeQW9HMPNKbD00jyR|A
-                  - 0C]R0!V'Q0g09^H)dn!b9Zi3L|@9B
-                  - evM'CS7ssm!URJ?6|2O-XfgziQZ=b
-                  - 52.Z8G||Zf(-|d'c3Lf0Ap#PagG9j(
-                  - inBL1G-H(Oo[B#xfgJ$F*%=3')Ofn
+                    - password: aOwqDh0ZK*P;!M|%oiFYJ!IK%TMXQO
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: Wo:)*V2nMakoVI78[fKu|QDI.E45p|
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: '%XqlsK2qN.9>*&jk6gYIG.[aE,hiRc'
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: WQNY0{R~(G99uc&i62Mve).n<|xt=F
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: 2$m-&z9!5$c3QlxQP{h#@0x~'M/h]T
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: y]e_H)/z2yzbr{4C&hHOb[Q:#/$Hml
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: +iZ,<<+_MR:jJ,JbXTN*3Z,xLo'=@E
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: x=e6H^U;ajD+)h5Z8$7Wy)^Ob8ERw'
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: +p!SGSnR*JNl}/[#oVQy~ZxtoZU}F+
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                    - password: '%h:23-bMb0;?QWL)chKm8{>%)mN:EO'
+                      length: 30
+                      metadata:
+                        type: random
+                        complexity: strong
+                      analysis: null
+                  count: 10
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -92,4 +139,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
