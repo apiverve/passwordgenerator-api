@@ -1,1 +1,3 @@
-from .apiClient import PasswordgeneratorAPIClient
+from .apiClient import PasswordgeneratorAPIClient, PasswordgeneratorAPIClientError
+
+__all__ = ['PasswordgeneratorAPIClient', 'PasswordgeneratorAPIClientError']
