@@ -30,7 +30,6 @@ namespace APIVerve.API.PasswordGenerator
     public partial class Data
     {
         [JsonProperty("length")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Length { get; set; }
 
         [JsonProperty("count")]
