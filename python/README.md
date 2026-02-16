@@ -44,7 +44,11 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 ```
 
 ###### Simple Request
@@ -134,7 +142,11 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient, Pas
 
 api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -155,7 +167,11 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient, Pas
 
 api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 
 try:
     result = api.execute(query)
@@ -189,7 +205,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient, PasswordgeneratorAPIClientError
 
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 
 # Using context manager ensures proper cleanup
 with PasswordgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -215,7 +235,11 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient
 # Enable debug mode
 api = PasswordgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "count": 1, "length": 12, "complexity": "medium" }
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -230,8 +254,13 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient
 
 api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "count": 1,
+    "length": 12,
+    "complexity": "medium"
+}
+
 try:
-    query = { "count": 1, "length": 12, "complexity": "medium" }
     result = api.execute(query)
     print(result)
 finally:
