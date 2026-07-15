@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/passwordgenerator';
  */
 async function callPasswordGeneratorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            count: 10,
+            length: 12,
+            complexity: &#x27;strong&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
