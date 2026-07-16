@@ -25,20 +25,57 @@ namespace APIVerve.API.PasswordGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
-        [JsonProperty("length")]
-        public long Length { get; set; }
+        [JsonProperty("passwords")]
+        public Password[] Passwords { get; set; }
 
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
+    }
+
+    public partial class Password
+    {
+        [JsonProperty("password")]
+        public string PasswordPassword { get; set; }
+
+        [JsonProperty("length")]
+        public long? Length { get; set; }
+
+        [JsonProperty("metadata")]
+        public Metadata Metadata { get; set; }
+
+        [JsonProperty("analysis")]
+        public object Analysis { get; set; }
+    }
+
+    public partial class Metadata
+    {
+        [JsonProperty("type")]
+        public TypeEnum? Type { get; set; }
 
         [JsonProperty("complexity")]
-        public string Complexity { get; set; }
-
-        [JsonProperty("passwords")]
-        public string[] Passwords { get; set; }
+        public Complexity? Complexity { get; set; }
     }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
+    }
+
+    public enum Complexity { Strong };
+
+    public enum TypeEnum { Random };
 }
