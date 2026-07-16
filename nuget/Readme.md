@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.PasswordGenerator;
 
 class Program
 {
@@ -60,10 +60,10 @@ class Program
         // Initialize the API client
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+        var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
         // Make the API call
@@ -118,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.PasswordGenerator;
 
 public class Example
 {
@@ -126,10 +126,10 @@ public class Example
     {
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+        var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -152,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.PasswordGenerator;
 
 public class Example
 {
@@ -160,10 +160,10 @@ public class Example
     {
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+        var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.PasswordGenerator;
 
 public class Example
 {
@@ -199,10 +199,10 @@ public class Example
     {
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+        var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
         try
@@ -245,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.PasswordGenerator;
 
 public class Example
 {
@@ -257,10 +257,10 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+        var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
         try
@@ -300,10 +300,10 @@ var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,10 +328,10 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -348,10 +348,10 @@ var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -362,10 +362,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    count = 1,
-    length = 12,
-    complexity = "medium"
+var queryOptions = new PasswordGeneratorQueryOptions {
+    Count = 1,
+    Length = 12,
+    Complexity = "medium"
 };
 
 using (var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -385,21 +385,99 @@ using (var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "length": "30",
-    "count": 10,
-    "complexity": "strong",
     "passwords": [
-      "nYC+ye^j0?*$[FQh-x2WkBs0)B3Z2A",
-      "KbT'#1$?Z.|y:E*vy3iPndYM78mh.",
-      "]Pja)F/#a{pc[nS37w_@B*+Tjq3)/]",
-      "/C7f!3g-}QnJBJAV7hxiLv'UBkc@2=",
-      ".'i2('fD'80]'l/g)BoY[#OW&8",
-      "1::wMGZ#sUpgeQW9HMPNKbD00jyR|A",
-      "0C]R0!V'Q0g09^H)dn!b9Zi3L|@9B",
-      "evM'CS7ssm!URJ?6|2O-XfgziQZ=b",
-      "52.Z8G||Zf(-|d'c3Lf0Ap#PagG9j(",
-      "inBL1G-H(Oo[B#xfgJ$F*%=3')Ofn"
-    ]
+      {
+        "password": "aOwqDh0ZK*P;!M|%oiFYJ!IK%TMXQO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "Wo:)*V2nMakoVI78[fKu|QDI.E45p|",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%XqlsK2qN.9>*&jk6gYIG.[aE,hiRc",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "WQNY0{R~(G99uc&i62Mve).n<|xt=F",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "2$m-&z9!5$c3QlxQP{h#@0x~'M/h]T",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "y]e_H)/z2yzbr{4C&hHOb[Q:#/$Hml",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+iZ,<<+_MR:jJ,JbXTN*3Z,xLo'=@E",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "x=e6H^U;ajD+)h5Z8$7Wy)^Ob8ERw'",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+p!SGSnR*JNl}/[#oVQy~ZxtoZU}F+",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%h:23-bMb0;?QWL)chKm8{>%)mN:EO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      }
+    ],
+    "count": 10
   }
 }
 ```
