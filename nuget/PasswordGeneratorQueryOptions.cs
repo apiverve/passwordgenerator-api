@@ -14,13 +14,13 @@ namespace APIVerve.API.PasswordGenerator
         /// The number of passwords to generate
         /// </summary>
         [JsonProperty("count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
 
         /// <summary>
         /// The length of the password to generate
         /// </summary>
         [JsonProperty("length")]
-        public string Length { get; set; }
+        public int Length { get; set; }
 
         /// <summary>
         /// The complexity of the password
