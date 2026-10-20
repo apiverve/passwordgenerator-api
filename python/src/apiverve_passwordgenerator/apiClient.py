@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,9 +24,22 @@ class ValidationError(PasswordgeneratorAPIClientError):
 class PasswordgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "count": {"type": "integer", "required": True, "min": 1, "max": 100, "default": 1},
-        "length": {"type": "integer", "required": True, "min": 4, "max": 128, "default": 12},
-        "complexity": {"type": "string", "required": True, "default": "medium"}
+        "count": {"type": "integer", "required": False, "min": 1, "max": 100, "default": 1},
+        "length": {"type": "integer", "required": False, "min": 4, "max": 128, "default": 12},
+        "complexity": {"type": "string", "required": False, "default": "medium"},
+        "type": {"type": "string", "required": False, "default": "random"},
+        "includeNumbers": {"type": "boolean", "required": False, "default": False},
+        "includeSymbols": {"type": "boolean", "required": False, "default": False},
+        "includeUppercase": {"type": "boolean", "required": False, "default": False},
+        "includeLowercase": {"type": "boolean", "required": False, "default": True},
+        "excludeSimilar": {"type": "boolean", "required": False, "default": False},
+        "excludeAmbiguous": {"type": "boolean", "required": False, "default": False},
+        "mixedCase": {"type": "boolean", "required": False, "default": False},
+        "strict": {"type": "boolean", "required": False, "default": False},
+        "wordCount": {"type": "integer", "required": False, "min": 2, "max": 12, "default": 4},
+        "separator": {"type": "string", "required": False, "default": "-"},
+        "capitalize": {"type": "boolean", "required": False, "default": False},
+        "analyze": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns

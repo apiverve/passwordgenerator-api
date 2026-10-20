@@ -1,13 +1,12 @@
 Password Generator API
 ============
 
-Password Generator is a simple tool for generating passwords. It returns the generated password.
+Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-passwordgenerator.svg)](https://pypi.org/project/apiverve-passwordgenerator/)
+
+This is a Python wrapper for the [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-passwordgenerator
 
 ## Configuration
 
-Before using the passwordgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Password Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -47,7 +46,20 @@ api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 try:
@@ -64,7 +76,7 @@ except Exception as e:
 
 ## Usage
 
-The Password Generator API documentation is found here: [https://docs.apiverve.com/ref/passwordgenerator](https://docs.apiverve.com/ref/passwordgenerator?utm_source=pypi&utm_medium=readme).
+The Password Generator API documentation is found here: [https://docs.apiverve.com/ref/passwordgenerator](https://docs.apiverve.com/ref/passwordgenerator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -89,7 +101,20 @@ Using the API client, you can perform requests to the API.
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 ```
 
@@ -110,21 +135,99 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "length": "30",
-    "count": 10,
-    "complexity": "strong",
     "passwords": [
-      "nYC+ye^j0?*$[FQh-x2WkBs0)B3Z2A",
-      "KbT'#1$?Z.|y:E*vy3iPndYM78mh.",
-      "]Pja)F/#a{pc[nS37w_@B*+Tjq3)/]",
-      "/C7f!3g-}QnJBJAV7hxiLv'UBkc@2=",
-      ".'i2('fD'80]'l/g)BoY[#OW&8",
-      "1::wMGZ#sUpgeQW9HMPNKbD00jyR|A",
-      "0C]R0!V'Q0g09^H)dn!b9Zi3L|@9B",
-      "evM'CS7ssm!URJ?6|2O-XfgziQZ=b",
-      "52.Z8G||Zf(-|d'c3Lf0Ap#PagG9j(",
-      "inBL1G-H(Oo[B#xfgJ$F*%=3')Ofn"
-    ]
+      {
+        "password": "aOwqDh0ZK*P;!M|%oiFYJ!IK%TMXQO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "Wo:)*V2nMakoVI78[fKu|QDI.E45p|",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%XqlsK2qN.9>*&jk6gYIG.[aE,hiRc",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "WQNY0{R~(G99uc&i62Mve).n<|xt=F",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "2$m-&z9!5$c3QlxQP{h#@0x~'M/h]T",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "y]e_H)/z2yzbr{4C&hHOb[Q:#/$Hml",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+iZ,<<+_MR:jJ,JbXTN*3Z,xLo'=@E",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "x=e6H^U;ajD+)h5Z8$7Wy)^Ob8ERw'",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+p!SGSnR*JNl}/[#oVQy~ZxtoZU}F+",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%h:23-bMb0;?QWL)chKm8{>%)mN:EO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      }
+    ],
+    "count": 10
   }
 }
 ```
@@ -145,7 +248,20 @@ api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 try:
@@ -170,7 +286,20 @@ api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 try:
@@ -208,7 +337,20 @@ from apiverve_passwordgenerator.apiClient import PasswordgeneratorAPIClient, Pas
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 # Using context manager ensures proper cleanup
@@ -238,7 +380,20 @@ api = PasswordgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 # Debug information will be printed to console
@@ -257,7 +412,20 @@ api = PasswordgeneratorAPIClient("[YOUR_API_KEY]")
 query = {
     "count": 1,
     "length": 12,
-    "complexity": "medium"
+    "complexity": "medium",
+    "type": "random",
+    "includeNumbers": true,
+    "includeSymbols": true,
+    "includeUppercase": true,
+    "includeLowercase": true,
+    "excludeSimilar": true,
+    "excludeAmbiguous": true,
+    "mixedCase": true,
+    "strict": true,
+    "wordCount": 4,
+    "separator": "-",
+    "capitalize": true,
+    "analyze": true
 }
 
 try:
@@ -272,7 +440,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -283,12 +451,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
