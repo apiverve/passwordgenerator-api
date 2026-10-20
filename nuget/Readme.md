@@ -1,13 +1,12 @@
-PasswordGenerator API
+Password Generator API
 ============
 
-Password Generator is a simple tool for generating passwords. It returns the generated password.
+Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [PasswordGenerator API](https://apiverve.com/marketplace/passwordgenerator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.PasswordGenerator.svg)](https://www.nuget.org/packages/APIVerve.API.PasswordGenerator)
+
+This is a .NET wrapper for the [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the passwordgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Password Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,10 +60,23 @@ class Program
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new PasswordGeneratorQueryOptions {
-    Count = 1,
-    Length = 12,
-    Complexity = "medium"
-};
+            Count = 1,
+            Length = 12,
+            Complexity = "medium",
+            Type = "random",
+            IncludeNumbers = true,
+            IncludeSymbols = true,
+            IncludeUppercase = true,
+            IncludeLowercase = true,
+            ExcludeSimilar = true,
+            ExcludeAmbiguous = true,
+            MixedCase = true,
+            Strict = true,
+            WordCount = 4,
+            Separator = "-",
+            Capitalize = true,
+            Analyze = true
+        };
 
         // Make the API call
         try
@@ -94,13 +106,13 @@ class Program
 
 ## Usage
 
-The PasswordGenerator API documentation is found here: [https://docs.apiverve.com/ref/passwordgenerator](https://docs.apiverve.com/ref/passwordgenerator?utm_source=nuget&utm_medium=readme).
+The Password Generator API documentation is found here: [https://docs.apiverve.com/ref/passwordgenerator](https://docs.apiverve.com/ref/passwordgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-PasswordGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Password Generator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -127,10 +139,23 @@ public class Example
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new PasswordGeneratorQueryOptions {
-    Count = 1,
-    Length = 12,
-    Complexity = "medium"
-};
+            Count = 1,
+            Length = 12,
+            Complexity = "medium",
+            Type = "random",
+            IncludeNumbers = true,
+            IncludeSymbols = true,
+            IncludeUppercase = true,
+            IncludeLowercase = true,
+            ExcludeSimilar = true,
+            ExcludeAmbiguous = true,
+            MixedCase = true,
+            Strict = true,
+            WordCount = 4,
+            Separator = "-",
+            Capitalize = true,
+            Analyze = true
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -161,10 +186,23 @@ public class Example
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new PasswordGeneratorQueryOptions {
-    Count = 1,
-    Length = 12,
-    Complexity = "medium"
-};
+            Count = 1,
+            Length = 12,
+            Complexity = "medium",
+            Type = "random",
+            IncludeNumbers = true,
+            IncludeSymbols = true,
+            IncludeUppercase = true,
+            IncludeLowercase = true,
+            ExcludeSimilar = true,
+            ExcludeAmbiguous = true,
+            MixedCase = true,
+            Strict = true,
+            WordCount = 4,
+            Separator = "-",
+            Capitalize = true,
+            Analyze = true
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -200,10 +238,23 @@ public class Example
         var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new PasswordGeneratorQueryOptions {
-    Count = 1,
-    Length = 12,
-    Complexity = "medium"
-};
+            Count = 1,
+            Length = 12,
+            Complexity = "medium",
+            Type = "random",
+            IncludeNumbers = true,
+            IncludeSymbols = true,
+            IncludeUppercase = true,
+            IncludeLowercase = true,
+            ExcludeSimilar = true,
+            ExcludeAmbiguous = true,
+            MixedCase = true,
+            Strict = true,
+            WordCount = 4,
+            Separator = "-",
+            Capitalize = true,
+            Analyze = true
+        };
 
         try
         {
@@ -258,10 +309,23 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new PasswordGeneratorQueryOptions {
-    Count = 1,
-    Length = 12,
-    Complexity = "medium"
-};
+            Count = 1,
+            Length = 12,
+            Complexity = "medium",
+            Type = "random",
+            IncludeNumbers = true,
+            IncludeSymbols = true,
+            IncludeUppercase = true,
+            IncludeLowercase = true,
+            ExcludeSimilar = true,
+            ExcludeAmbiguous = true,
+            MixedCase = true,
+            Strict = true,
+            WordCount = 4,
+            Separator = "-",
+            Capitalize = true,
+            Analyze = true
+        };
 
         try
         {
@@ -303,7 +367,20 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 var queryOptions = new PasswordGeneratorQueryOptions {
     Count = 1,
     Length = 12,
-    Complexity = "medium"
+    Complexity = "medium",
+    Type = "random",
+    IncludeNumbers = true,
+    IncludeSymbols = true,
+    IncludeUppercase = true,
+    IncludeLowercase = true,
+    ExcludeSimilar = true,
+    ExcludeAmbiguous = true,
+    MixedCase = true,
+    Strict = true,
+    WordCount = 4,
+    Separator = "-",
+    Capitalize = true,
+    Analyze = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -331,7 +408,20 @@ apiClient.SetLogger(message =>
 var queryOptions = new PasswordGeneratorQueryOptions {
     Count = 1,
     Length = 12,
-    Complexity = "medium"
+    Complexity = "medium",
+    Type = "random",
+    IncludeNumbers = true,
+    IncludeSymbols = true,
+    IncludeUppercase = true,
+    IncludeLowercase = true,
+    ExcludeSimilar = true,
+    ExcludeAmbiguous = true,
+    MixedCase = true,
+    Strict = true,
+    WordCount = 4,
+    Separator = "-",
+    Capitalize = true,
+    Analyze = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -351,7 +441,20 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 var queryOptions = new PasswordGeneratorQueryOptions {
     Count = 1,
     Length = 12,
-    Complexity = "medium"
+    Complexity = "medium",
+    Type = "random",
+    IncludeNumbers = true,
+    IncludeSymbols = true,
+    IncludeUppercase = true,
+    IncludeLowercase = true,
+    ExcludeSimilar = true,
+    ExcludeAmbiguous = true,
+    MixedCase = true,
+    Strict = true,
+    WordCount = 4,
+    Separator = "-",
+    Capitalize = true,
+    Analyze = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -365,7 +468,20 @@ The API client implements `IDisposable` for proper resource cleanup:
 var queryOptions = new PasswordGeneratorQueryOptions {
     Count = 1,
     Length = 12,
-    Complexity = "medium"
+    Complexity = "medium",
+    Type = "random",
+    IncludeNumbers = true,
+    IncludeSymbols = true,
+    IncludeUppercase = true,
+    IncludeLowercase = true,
+    ExcludeSimilar = true,
+    ExcludeAmbiguous = true,
+    MixedCase = true,
+    Strict = true,
+    WordCount = 4,
+    Separator = "-",
+    Capitalize = true,
+    Analyze = true
 };
 
 using (var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -486,7 +602,7 @@ using (var apiClient = new PasswordGeneratorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -497,12 +613,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

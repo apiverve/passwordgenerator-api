@@ -67,9 +67,22 @@ namespace APIVerve.API.PasswordGenerator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "count", new ValidationRule { Type = "integer", Required = true, Min = 1, Max = 100 } },
-            { "length", new ValidationRule { Type = "integer", Required = true, Min = 4, Max = 128 } },
-            { "complexity", new ValidationRule { Type = "string", Required = true } }
+            { "count", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 100 } },
+            { "length", new ValidationRule { Type = "integer", Required = false, Min = 4, Max = 128 } },
+            { "complexity", new ValidationRule { Type = "string", Required = false } },
+            { "type", new ValidationRule { Type = "string", Required = false } },
+            { "includeNumbers", new ValidationRule { Type = "boolean", Required = false } },
+            { "includeSymbols", new ValidationRule { Type = "boolean", Required = false } },
+            { "includeUppercase", new ValidationRule { Type = "boolean", Required = false } },
+            { "includeLowercase", new ValidationRule { Type = "boolean", Required = false } },
+            { "excludeSimilar", new ValidationRule { Type = "boolean", Required = false } },
+            { "excludeAmbiguous", new ValidationRule { Type = "boolean", Required = false } },
+            { "mixedCase", new ValidationRule { Type = "boolean", Required = false } },
+            { "strict", new ValidationRule { Type = "boolean", Required = false } },
+            { "wordCount", new ValidationRule { Type = "integer", Required = false, Min = 2, Max = 12 } },
+            { "separator", new ValidationRule { Type = "string", Required = false } },
+            { "capitalize", new ValidationRule { Type = "boolean", Required = false } },
+            { "analyze", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>
