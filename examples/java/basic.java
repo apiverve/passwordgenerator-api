@@ -17,6 +17,18 @@ public class BasicExample {
         parameters.put(&quot;count&quot;, 10);
         parameters.put(&quot;length&quot;, 12);
         parameters.put(&quot;complexity&quot;, &quot;strong&quot;);
+        parameters.put(&quot;type&quot;, &quot;random&quot;);
+        parameters.put(&quot;includeNumbers&quot;, true);
+        parameters.put(&quot;includeSymbols&quot;, true);
+        parameters.put(&quot;includeUppercase&quot;, true);
+        parameters.put(&quot;includeLowercase&quot;, true);
+        parameters.put(&quot;excludeSimilar&quot;, true);
+        parameters.put(&quot;excludeAmbiguous&quot;, true);
+        parameters.put(&quot;mixedCase&quot;, true);
+        parameters.put(&quot;strict&quot;, true);
+        parameters.put(&quot;wordCount&quot;, 4);
+        parameters.put(&quot;separator&quot;, &quot;-&quot;);
+        parameters.put(&quot;capitalize&quot;, true);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);

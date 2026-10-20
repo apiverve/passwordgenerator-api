@@ -1,13 +1,13 @@
-# [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Password Generator is a simple tool for generating passwords. It returns the generated password.
+Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.
 
 The Password Generator API provides a simple, reliable way to integrate password generator functionality into your applications. Built for developers who need production-ready password generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -33,7 +33,19 @@ async function callPasswordGeneratorAPI() {
         const params = new URLSearchParams({
             count: 10,
             length: 12,
-            complexity: 'strong'
+            complexity: 'strong',
+            type: 'random',
+            includeNumbers: true,
+            includeSymbols: true,
+            includeUppercase: true,
+            includeLowercase: true,
+            excludeSimilar: true,
+            excludeAmbiguous: true,
+            mixedCase: true,
+            strict: true,
+            wordCount: 4,
+            separator: '-',
+            capitalize: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/passwordgenerator?${params}`, {
@@ -56,7 +68,7 @@ callPasswordGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/passwordgenerator?count=10&length=12&complexity=strong" \
+curl -X GET "https://api.apiverve.com/v1/passwordgenerator?count=10&length=12&complexity=strong&type=random&includeNumbers=true&includeSymbols=true&includeUppercase=true&includeLowercase=true&excludeSimilar=true&excludeAmbiguous=true&mixedCase=true&strict=true&wordCount=4&separator=-&capitalize=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -163,7 +175,7 @@ go get github.com/apiverve/passwordgenerator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/passwordgenerator](https://docs.apiverve.com/ref/passwordgenerator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +205,120 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Password Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "passwords": [
+      {
+        "password": "aOwqDh0ZK*P;!M|%oiFYJ!IK%TMXQO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "Wo:)*V2nMakoVI78[fKu|QDI.E45p|",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%XqlsK2qN.9>*&jk6gYIG.[aE,hiRc",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "WQNY0{R~(G99uc&i62Mve).n<|xt=F",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "2$m-&z9!5$c3QlxQP{h#@0x~'M/h]T",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "y]e_H)/z2yzbr{4C&hHOb[Q:#/$Hml",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+iZ,<<+_MR:jJ,JbXTN*3Z,xLo'=@E",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "x=e6H^U;ajD+)h5Z8$7Wy)^Ob8ERw'",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "+p!SGSnR*JNl}/[#oVQy~ZxtoZU}F+",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      },
+      {
+        "password": "%h:23-bMb0;?QWL)chKm8{>%)mN:EO",
+        "length": 30,
+        "metadata": {
+          "type": "random",
+          "complexity": "strong"
+        },
+        "analysis": null
+      }
+    ],
+    "count": 10
+  }
 }
 ```
 
@@ -205,7 +326,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

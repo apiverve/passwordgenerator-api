@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Password Generator
   description: >-
-    Password Generator is a simple tool for generating passwords. It returns the
-    generated password.
+    Password Generator creates random passwords, pronounceable strings, and
+    multi-word passphrases configured by length, complexity, and character sets.
+    It outputs generated strings with character counts and configuration
+    metadata.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/passwordgenerator:
     get:
-      summary: Generate Password
+      summary: Password Generator
       description: Generate passwords with a specified length and complexity
       operationId: passwordgenerator
       parameters:
@@ -26,23 +28,137 @@ paths:
           in: query
           schema:
             type: integer
-          required: true
+          required: false
           description: The number of passwords to generate
           example: 10
         - name: length
           in: query
           schema:
             type: integer
-          required: true
+          required: false
           description: The length of the password to generate
           example: 12
         - name: complexity
           in: query
           schema:
             type: string
-          required: true
-          description: The complexity of the password
+          required: false
+          description: The complexity of the password. Only applies when type is random
           example: strong
+        - name: type
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            The kind of password to generate. random uses the complexity preset,
+            pronounceable builds readable syllables, passphrase joins dictionary
+            words, and custom honours the include/exclude switches below
+          example: random
+        - name: includeNumbers
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include digits. Applies to custom and pronounceable, and to random
+            at simple complexity
+          example: true
+        - name: includeSymbols
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include punctuation symbols. Applies to custom, and to random at
+            medium complexity
+          example: true
+        - name: includeUppercase
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include uppercase letters. Applies to custom, and to random at
+            simple complexity
+          example: true
+        - name: includeLowercase
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include lowercase letters in a custom password. Set false to build
+            from the other character sets only
+          example: true
+        - name: excludeSimilar
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Exclude characters that are easy to confuse when read aloud or typed
+            (i, l, 1, L, o, 0, O)
+          example: true
+        - name: excludeAmbiguous
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Exclude brackets, slashes, quotes and other characters that need
+            escaping in shells and config files
+          example: true
+        - name: mixedCase
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Randomly capitalise letters in a pronounceable password
+          example: true
+        - name: strict
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Guarantee at least one character from every enabled set rather than
+            leaving it to chance
+          example: true
+        - name: wordCount
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: >-
+            How many words a passphrase contains. Only applies when type is
+            passphrase
+          example: 4
+        - name: separator
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            The character placed between passphrase words. Only applies when
+            type is passphrase
+          example: '-'
+        - name: capitalize
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Capitalise each word of a passphrase. Only applies when type is
+            passphrase
+          example: true
+        - name: analyze
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Return a strength analysis alongside each password
+          example: true
       responses:
         '200':
           description: Successful Response

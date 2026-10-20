@@ -18,7 +18,7 @@ def call_passwordgenerator_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;count&#x27;: 10, &#x27;length&#x27;: 12, &#x27;complexity&#x27;: &#x27;strong&#x27;}
+        params &#x3D; {&#x27;count&#x27;: 10, &#x27;length&#x27;: 12, &#x27;complexity&#x27;: &#x27;strong&#x27;, &#x27;type&#x27;: &#x27;random&#x27;, &#x27;includeNumbers&#x27;: true, &#x27;includeSymbols&#x27;: true, &#x27;includeUppercase&#x27;: true, &#x27;includeLowercase&#x27;: true, &#x27;excludeSimilar&#x27;: true, &#x27;excludeAmbiguous&#x27;: true, &#x27;mixedCase&#x27;: true, &#x27;strict&#x27;: true, &#x27;wordCount&#x27;: 4, &#x27;separator&#x27;: &#x27;-&#x27;, &#x27;capitalize&#x27;: true}
 
         headers = {
             'x-api-key': API_KEY

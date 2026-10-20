@@ -17,7 +17,19 @@ async function callPasswordGeneratorAPI() {
     const params &#x3D; new URLSearchParams({
             count: 10,
             length: 12,
-            complexity: &#x27;strong&#x27;
+            complexity: &#x27;strong&#x27;,
+            type: &#x27;random&#x27;,
+            includeNumbers: true,
+            includeSymbols: true,
+            includeUppercase: true,
+            includeLowercase: true,
+            excludeSimilar: true,
+            excludeAmbiguous: true,
+            mixedCase: true,
+            strict: true,
+            wordCount: 4,
+            separator: &#x27;-&#x27;,
+            capitalize: true
         });
 
     const response = await fetch(`${API_URL}?${params}`, {
