@@ -17,7 +17,20 @@ const api = new passwordgeneratorAPI({
 var query = {
   count: 1,
   length: 12,
-  complexity: "medium"
+  complexity: "medium",
+  type: "random",
+  includeNumbers: false,
+  includeSymbols: false,
+  includeUppercase: false,
+  includeLowercase: true,
+  excludeSimilar: false,
+  excludeAmbiguous: false,
+  mixedCase: false,
+  strict: false,
+  wordCount: 4,
+  separator: "-",
+  capitalize: false,
+  analyze: false
 };
 
 // Make the API request using callback

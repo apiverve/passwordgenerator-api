@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/passwordgenerator",
-  "version": "1.2.0",
-  "description": "Password Generator is a simple tool for generating passwords. It returns the generated password.",
+  "version": "1.2.2",
+  "description": "Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "password generator", "password generation", "password generator api", "password generation api", "password generator tool"
+    "password generator api", "bulk password generator", "api password generator", "free password generator api", "random password generator"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/passwordgenerator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/passwordgenerator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/passwordgenerator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",

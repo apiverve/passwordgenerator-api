@@ -30,7 +30,7 @@ class passwordgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/passwordgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"count":{"type":"integer","required":true,"min":1,"max":100,"default":1},"length":{"type":"integer","required":true,"min":4,"max":128,"default":12},"complexity":{"type":"string","required":true,"default":"medium"}};
+        this.validationRules = {"count":{"type":"integer","required":false,"min":1,"max":100,"default":1},"length":{"type":"integer","required":false,"min":4,"max":128,"default":12},"complexity":{"type":"string","required":false,"default":"medium"},"type":{"type":"string","required":false,"default":"random"},"includeNumbers":{"type":"boolean","required":false,"default":false},"includeSymbols":{"type":"boolean","required":false,"default":false},"includeUppercase":{"type":"boolean","required":false,"default":false},"includeLowercase":{"type":"boolean","required":false,"default":true},"excludeSimilar":{"type":"boolean","required":false,"default":false},"excludeAmbiguous":{"type":"boolean","required":false,"default":false},"mixedCase":{"type":"boolean","required":false,"default":false},"strict":{"type":"boolean","required":false,"default":false},"wordCount":{"type":"integer","required":false,"min":2,"max":12,"default":4},"separator":{"type":"string","required":false,"default":"-"},"capitalize":{"type":"boolean","required":false,"default":false},"analyze":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
