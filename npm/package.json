@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/passwordgenerator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.",
   "main": "index.js",
   "types": "index.d.ts",
