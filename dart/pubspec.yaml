@@ -1,0 +1,16 @@
+name: apiverve_passwordgenerator
+description: "Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata."
+version: 1.2.5
+homepage: https://apiverve.com/marketplace/passwordgenerator?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/passwordgenerator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
