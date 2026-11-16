@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-passwordgenerator"
-version = "1.2.5"
+version = "1.2.6"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata."
+description = "Password Generator is a password generator API that creates random passwords, pronounceable passwords and multi-word passphrases from length, complexity and character-set rules, up to 100 per call. Each comes back with its length and the settings used to build it."
 keywords = ["password generator api", "bulk password generator", "api password generator", "free password generator api", "random password generator"]
 readme = "README.md"
 requires-python = ">=3.9"
