@@ -1,6 +1,6 @@
 # [Password Generator API](https://apiverve.com/marketplace/passwordgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.
+Password Generator is a password generator API that creates random passwords, pronounceable passwords and multi-word passphrases from length, complexity and character-set rules, up to 100 per call. Each comes back with its length and the settings used to build it.
 
 The Password Generator API provides a simple, reliable way to integrate password generator functionality into your applications. Built for developers who need production-ready password generator capabilities without the complexity of building from scratch.
 
