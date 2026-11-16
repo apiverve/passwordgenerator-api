@@ -1,6 +1,6 @@
 # Password Generator API - Dart/Flutter Client
 
-Password Generator creates random passwords, pronounceable strings, and multi-word passphrases configured by length, complexity, and character sets. It outputs generated strings with character counts and configuration metadata.
+Password Generator is a password generator API that creates random passwords, pronounceable passwords and multi-word passphrases from length, complexity and character-set rules, up to 100 per call. Each comes back with its length and the settings used to build it.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_passwordgenerator.svg)](https://pub.dev/packages/apiverve_passwordgenerator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_passwordgenerator: ^1.2.5
+  apiverve_passwordgenerator: ^1.2.6
 ```
 
 Then run:
